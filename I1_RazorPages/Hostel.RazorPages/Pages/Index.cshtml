@@ -1,0 +1,31 @@
+@page
+@model IndexModel
+@{ ViewData["Title"] = "Početna"; }
+<div class="hero-section">
+  <div class="container text-center">
+    <img src="~/images/logo.svg" alt="HostelHub" width="80" height="80" class="mb-3" />
+    <h1>Dobrodošli u <strong>HostelHub</strong></h1>
+    <p class="lead opacity-75">Sustav za upravljanje rezervacijama ležajeva</p>
+    <div class="d-flex gap-3 justify-content-center mt-4">
+      <a asp-page="/Lezajevi/Index" class="btn btn-warning btn-lg"><i class="bi bi-bed-fill me-2"></i>Pregledaj ležajeve</a>
+      <a asp-page="/Rezervacije/Create" class="btn btn-outline-light btn-lg"><i class="bi bi-calendar-plus me-2"></i>Nova rezervacija</a>
+    </div>
+  </div>
+</div>
+<div class="row g-4 mb-5">
+  <div class="col-md-3"><div class="stat-card"><div class="stat-icon"><i class="bi bi-bed-fill"></i></div><div class="stat-number">@Model.UkupnoLezajeva</div><div class="text-muted">Ukupno ležajeva</div></div></div>
+  <div class="col-md-3"><div class="stat-card" style="border-left-color:#28a745"><div class="stat-icon text-success"><i class="bi bi-check-circle-fill"></i></div><div class="stat-number text-success">@Model.DostupnoLezajeva</div><div class="text-muted">Dostupno</div></div></div>
+  <div class="col-md-3"><div class="stat-card" style="border-left-color:#dc3545"><div class="stat-icon text-danger"><i class="bi bi-x-circle-fill"></i></div><div class="stat-number text-danger">@Model.ZauzetihLezajeva</div><div class="text-muted">Zauzeto</div></div></div>
+  <div class="col-md-3"><div class="stat-card" style="border-left-color:#f4a535"><div class="stat-icon" style="color:#f4a535"><i class="bi bi-calendar-check-fill"></i></div><div class="stat-number" style="color:#f4a535">@Model.AktivnihRezervacija</div><div class="text-muted">Aktivnih rezervacija</div></div></div>
+</div>
+<h3 class="mb-3"><i class="bi bi-clock-history me-2 text-success"></i>Dostupni ležajevi</h3>
+<div class="row g-3">
+  @foreach (var lezaj in Model.DostupniLezajevi)
+  {
+    <div class="col-md-4"><partial name="_LezajKartica" model="lezaj" /></div>
+  }
+  @if (!Model.DostupniLezajevi.Any())
+  {
+    <div class="col-12"><div class="alert alert-warning"><i class="bi bi-exclamation-triangle me-2"></i>Trenutno nema dostupnih ležajeva.</div></div>
+  }
+</div>

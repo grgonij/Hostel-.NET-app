@@ -1,0 +1,15 @@
+@page
+@model Hostel.RazorPages.Pages.Lezajevi.IndexModel
+@{ ViewData["Title"] = "Ležajevi"; }
+<div class="page-header d-flex justify-content-between align-items-center">
+  <h2><i class="bi bi-bed-fill me-2"></i>Svi ležajevi</h2>
+  <a asp-page="Create" class="btn btn-hostel"><i class="bi bi-plus-lg me-1"></i>Dodaj ležaj</a>
+</div>
+@if (TempData["Poruka"] != null)
+{
+  <div class="alert alert-success alert-dismissible fade show"><i class="bi bi-check-circle me-2"></i>@TempData["Poruka"]<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+}
+<div class="row g-3">
+  @foreach (var lezaj in Model.Lezaji) { <div class="col-md-4"><partial name="_LezajKartica" model="lezaj" /></div> }
+</div>
+@if (!Model.Lezaji.Any()) { <div class="alert alert-hostel"><i class="bi bi-info-circle me-2"></i>Nema unesenih ležajeva. <a asp-page="Create" class="alert-link">Dodajte prvi ležaj!</a></div> }

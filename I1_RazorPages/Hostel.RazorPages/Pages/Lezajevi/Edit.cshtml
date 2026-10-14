@@ -1,0 +1,20 @@
+@page "{id:int}"
+@model Hostel.RazorPages.Pages.Lezajevi.EditModel
+@{ ViewData["Title"] = "Uredi ležaj"; }
+<div class="page-header"><h2><i class="bi bi-pencil-square me-2"></i>Uredi ležaj</h2></div>
+<div class="row"><div class="col-md-7"><div class="card shadow-sm"><div class="card-body p-4">
+<form method="post">
+  <input type="hidden" asp-for="Lezaj.Id" /><input type="hidden" asp-for="Lezaj.DatumDodavanja" />
+  <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+  <div class="mb-3"><label asp-for="Lezaj.Naziv" class="form-label fw-semibold"></label><input asp-for="Lezaj.Naziv" class="form-control" /><span asp-validation-for="Lezaj.Naziv" class="text-danger small"></span></div>
+  <div class="row">
+    <div class="col-md-6 mb-3"><label asp-for="Lezaj.BrojSobe" class="form-label fw-semibold"></label><input asp-for="Lezaj.BrojSobe" class="form-control" type="number" /></div>
+    <div class="col-md-6 mb-3"><label asp-for="Lezaj.CijenaPoNoci" class="form-label fw-semibold"></label><div class="input-group"><input asp-for="Lezaj.CijenaPoNoci" class="form-control" type="number" step="0.50" /><span class="input-group-text">€</span></div></div>
+  </div>
+  <div class="mb-3"><label asp-for="Lezaj.TipSobe" class="form-label fw-semibold"></label><select asp-for="Lezaj.TipSobe" asp-items="Html.GetEnumSelectList<Hostel.RazorPages.Models.TipSobe>()" class="form-select"></select></div>
+  <div class="mb-3"><label asp-for="Lezaj.Opis" class="form-label fw-semibold"></label><textarea asp-for="Lezaj.Opis" class="form-control" rows="3"></textarea></div>
+  <div class="mb-4"><div class="form-check form-switch"><input asp-for="Lezaj.Dostupan" class="form-check-input" type="checkbox" role="switch" /><label asp-for="Lezaj.Dostupan" class="form-check-label fw-semibold">Dostupan za rezervaciju</label></div></div>
+  <div class="d-flex gap-2"><button type="submit" class="btn btn-hostel"><i class="bi bi-save me-1"></i>Spremi promjene</button><a asp-page="Index" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Odustani</a></div>
+</form>
+</div></div></div></div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

@@ -1,0 +1,30 @@
+@using Hostel.MVC.Helpers
+@model Hostel.MVC.Models.Lezaj
+@{ ViewData["Title"] = "Detalji ležaja"; }
+<div class="page-header d-flex justify-content-between align-items-center">
+  <h2><i class="bi bi-info-circle me-2"></i>@Model.Naziv</h2>
+  <div class="d-flex gap-2"><a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil me-1"></i>Uredi</a><a asp-action="Index" class="btn btn-outline-primary btn-sm"><i class="bi bi-arrow-left me-1"></i>Natrag</a></div>
+</div>
+<div class="row g-4">
+  <div class="col-md-5"><div class="card shadow-sm">
+    <div class="card-header" style="background:var(--hostel-primary);color:white;"><h5 class="mb-0">@Model.Naziv</h5></div>
+    <div class="card-body">
+      <table class="table table-borderless">
+        <tr><td class="fw-semibold text-muted">Broj sobe</td><td>@Model.BrojSobe</td></tr>
+        <tr><td class="fw-semibold text-muted">Tip sobe</td><td>@Html.TipSobeBadge(Model.TipSobe)</td></tr>
+        <tr><td class="fw-semibold text-muted">Cijena</td><td>@Html.FormatCijena(Model.CijenaPoNoci) <span class="text-muted small">/ noć</span></td></tr>
+        <tr><td class="fw-semibold text-muted">Status</td><td>@Html.DostupnostIkona(Model.Dostupan)</td></tr>
+        <tr><td class="fw-semibold text-muted">Dodano</td><td>@Model.DatumDodavanja.ToString("dd.MM.yyyy")</td></tr>
+      </table>
+      @if(!string.IsNullOrEmpty(Model.Opis)){<p class="text-muted small">@Model.Opis</p>}
+    </div>
+    <div class="card-footer"><a asp-controller="Rezervacija" asp-action="Create" asp-route-lezajId="@Model.Id" class="btn btn-hostel w-100"><i class="bi bi-calendar-plus me-1"></i>Rezerviraj ovaj ležaj</a></div>
+  </div></div>
+  <div class="col-md-7">
+    <h5><i class="bi bi-calendar-check me-2"></i>Rezervacije (@Model.Rezervacije.Count)</h5>
+    @if(Model.Rezervacije.Any()){
+      <table class="table table-hover"><thead class="table-hostel"><tr><th>Gost</th><th>Prijava</th><th>Odjava</th><th>Status</th></tr></thead>
+      <tbody>@foreach(var r in Model.Rezervacije){<tr><td>@r.ImeGosta</td><td>@r.DatumPrijave.ToString("dd.MM.yyyy")</td><td>@r.DatumOdjave.ToString("dd.MM.yyyy")</td><td>@Html.StatusBadge(r.Status)</td></tr>}</tbody></table>
+    } else { <div class="alert alert-hostel"><i class="bi bi-info-circle me-2"></i>Nema rezervacija.</div> }
+  </div>
+</div>

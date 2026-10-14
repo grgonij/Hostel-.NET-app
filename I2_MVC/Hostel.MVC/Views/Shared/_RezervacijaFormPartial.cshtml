@@ -1,0 +1,10 @@
+@model Hostel.MVC.Models.Rezervacija
+<div class="mb-3"><label asp-for="ImeGosta" class="form-label fw-semibold"></label><input asp-for="ImeGosta" class="form-control" /><span asp-validation-for="ImeGosta" class="text-danger small"></span></div>
+<div class="mb-3"><label asp-for="Email" class="form-label fw-semibold"></label><input asp-for="Email" class="form-control" type="email" /><span asp-validation-for="Email" class="text-danger small"></span></div>
+<div class="mb-3"><label asp-for="LezajId" class="form-label fw-semibold">Ležaj</label><select asp-for="LezajId" asp-items="ViewBag.LezajId" class="form-select"><option value="">-- Odaberite --</option></select></div>
+<div class="row">
+  <div class="col-md-6 mb-3"><label asp-for="DatumPrijave" class="form-label fw-semibold"></label><input asp-for="DatumPrijave" class="form-control" type="date" id="DatumPrijave" /></div>
+  <div class="col-md-6 mb-3"><label asp-for="DatumOdjave" class="form-label fw-semibold"></label><input asp-for="DatumOdjave" class="form-control" type="date" id="DatumOdjave" /><div id="infoNoci" class="text-success small mt-1" style="display:none;"></div></div>
+</div>
+<div class="mb-3"><label asp-for="Status" class="form-label fw-semibold"></label><select asp-for="Status" asp-items="Html.GetEnumSelectList<Hostel.MVC.Models.StatusRezervacije>()" class="form-select"></select></div>
+<div class="mb-4"><label asp-for="Napomena" class="form-label fw-semibold"></label><textarea asp-for="Napomena" class="form-control" rows="2"></textarea></div>

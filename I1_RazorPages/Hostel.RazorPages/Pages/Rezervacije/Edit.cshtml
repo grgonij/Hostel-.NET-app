@@ -1,0 +1,20 @@
+@page "{id:int}"
+@model Hostel.RazorPages.Pages.Rezervacije.EditModel
+@{ ViewData["Title"] = "Uredi rezervaciju"; }
+<div class="page-header"><h2><i class="bi bi-pencil-square me-2"></i>Uredi rezervaciju</h2></div>
+<div class="row"><div class="col-md-7"><div class="card shadow-sm"><div class="card-body p-4">
+<form method="post">
+  <input type="hidden" asp-for="Rezervacija.Id" />
+  <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+  <div class="mb-3"><label asp-for="Rezervacija.ImeGosta" class="form-label fw-semibold"></label><input asp-for="Rezervacija.ImeGosta" class="form-control" /></div>
+  <div class="mb-3"><label asp-for="Rezervacija.Email" class="form-label fw-semibold"></label><input asp-for="Rezervacija.Email" class="form-control" type="email" /></div>
+  <div class="mb-3"><label asp-for="Rezervacija.LezajId" class="form-label fw-semibold">Ležaj</label><select asp-for="Rezervacija.LezajId" asp-items="Model.LezajiSelectList" class="form-select"></select></div>
+  <div class="row">
+    <div class="col-md-6 mb-3"><label asp-for="Rezervacija.DatumPrijave" class="form-label fw-semibold"></label><input asp-for="Rezervacija.DatumPrijave" class="form-control" type="date" id="DatumPrijave" /></div>
+    <div class="col-md-6 mb-3"><label asp-for="Rezervacija.DatumOdjave" class="form-label fw-semibold"></label><input asp-for="Rezervacija.DatumOdjave" class="form-control" type="date" id="DatumOdjave" /><div id="infoNoci" style="display:none;" class="text-success small mt-1"></div></div>
+  </div>
+  <div class="mb-4"><label asp-for="Rezervacija.Status" class="form-label fw-semibold"></label><select asp-for="Rezervacija.Status" asp-items="Html.GetEnumSelectList<Hostel.RazorPages.Models.StatusRezervacije>()" class="form-select"></select></div>
+  <div class="d-flex gap-2"><button type="submit" class="btn btn-hostel"><i class="bi bi-save me-1"></i>Spremi promjene</button><a asp-page="Index" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Odustani</a></div>
+</form>
+</div></div></div></div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

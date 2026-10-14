@@ -1,0 +1,96 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Hostel.RazorPages
+build_property.RootNamespace = Hostel.RazorPages
+build_property.ProjectDir = D:\hostel\I1_RazorPages\Hostel.RazorPages\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\hostel\I1_RazorPages\Hostel.RazorPages
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Lezajevi/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV6YWpldmlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Lezajevi/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV6YWpldmlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Lezajevi/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV6YWpldmlcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Lezajevi/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV6YWpldmlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Lezajevi/Filtriraj.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV6YWpldmlcRmlsdHJpcmFqLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Lezajevi/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV6YWpldmlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Lezajevi/Sortirani.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV6YWpldmlcU29ydGlyYW5pLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Rezervacije/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV6ZXJ2YWNpamVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Rezervacije/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV6ZXJ2YWNpamVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Rezervacije/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV6ZXJ2YWNpamVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Rezervacije/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV6ZXJ2YWNpamVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Shared/_LezajKartica.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MZXphakthcnRpY2EuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/hostel/I1_RazorPages/Hostel.RazorPages/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

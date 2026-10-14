@@ -1,0 +1,37 @@
+@{ ViewData["Title"] = "Početna"; }
+<div class="hero-section"><div class="container text-center">
+  <i class="bi bi-building display-1 text-warning mb-3"></i>
+  <h1>Dobrodošli u <strong>HostelHub</strong></h1>
+  <p class="lead opacity-75">ASP.NET Core MVC • Upravljanje rezervacijama hostela</p>
+  <div class="d-flex gap-3 justify-content-center mt-4">
+    <a asp-controller="Lezaj" asp-action="Dostupni" class="btn btn-warning btn-lg"><i class="bi bi-bed-fill me-2"></i>Dostupni ležajevi</a>
+    <a asp-controller="Rezervacija" asp-action="Create" class="btn btn-outline-light btn-lg"><i class="bi bi-calendar-plus me-2"></i>Nova rezervacija</a>
+  </div>
+</div></div>
+<div class="row g-4 mb-5">
+  <div class="col-md-3"><div class="stat-card"><div class="stat-icon"><i class="bi bi-bed-fill"></i></div><div class="stat-number">@ViewBag.UkupnoLezajeva</div><div class="text-muted">Ukupno ležajeva</div></div></div>
+  <div class="col-md-3"><div class="stat-card" style="border-left-color:#28a745"><div class="stat-icon text-success"><i class="bi bi-check-circle-fill"></i></div><div class="stat-number text-success">@ViewBag.DostupnoLezajeva</div><div class="text-muted">Dostupnih ležajeva</div></div></div>
+  <div class="col-md-3"><div class="stat-card" style="border-left-color:#f4a535"><div class="stat-icon" style="color:#f4a535"><i class="bi bi-calendar-check-fill"></i></div><div class="stat-number" style="color:#f4a535">@ViewBag.AktivnihRezervacija</div><div class="text-muted">Aktivnih rezervacija</div></div></div>
+  <div class="col-md-3"><div class="stat-card" style="border-left-color:#6f42c1"><div class="stat-icon" style="color:#6f42c1"><i class="bi bi-clock-fill"></i></div><div class="stat-number" style="color:#6f42c1">@ViewBag.NadolazecePrijave</div><div class="text-muted">Nadolazećih prijava</div></div></div>
+</div>
+<div class="row mb-4">
+  <div class="col-md-8">
+    <h4 class="mb-3"><i class="bi bi-lightning-charge-fill text-warning me-2"></i>Brze akcije</h4>
+    <div class="row g-3">
+      <div class="col-md-6"><a asp-controller="Lezaj" asp-action="Index" class="card text-decoration-none quick-action-card"><div class="card-body d-flex align-items-center gap-3"><i class="bi bi-bed fs-2 text-primary"></i><div><div class="fw-semibold">Upravljaj ležajevima</div><div class="text-muted small">Pregled, dodavanje, uređivanje</div></div></div></a></div>
+      <div class="col-md-6"><a asp-controller="Rezervacija" asp-action="Index" class="card text-decoration-none quick-action-card"><div class="card-body d-flex align-items-center gap-3"><i class="bi bi-calendar-check fs-2 text-success"></i><div><div class="fw-semibold">Sve rezervacije</div><div class="text-muted small">Pregled i upravljanje</div></div></div></a></div>
+      <div class="col-md-6"><a asp-controller="Rezervacija" asp-action="Nadolazece" class="card text-decoration-none quick-action-card"><div class="card-body d-flex align-items-center gap-3"><i class="bi bi-clock fs-2 text-warning"></i><div><div class="fw-semibold">Nadolazeće prijave</div><div class="text-muted small">Sljedećih 7 dana</div></div></div></a></div>
+      <div class="col-md-6"><a asp-controller="Lezaj" asp-action="Dostupni" class="card text-decoration-none quick-action-card"><div class="card-body d-flex align-items-center gap-3"><i class="bi bi-check-circle fs-2 text-info"></i><div><div class="fw-semibold">Dostupni ležajevi</div><div class="text-muted small">Slobodni za rezervaciju</div></div></div></a></div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h4 class="mb-3"><i class="bi bi-bed-fill text-primary me-2"></i>Preporučeni ležajevi</h4>
+    @foreach (var l in (ViewBag.DostupniLezaji as IEnumerable<Hostel.MVC.Models.Lezaj> ?? new List<Hostel.MVC.Models.Lezaj>())) {
+      <div class="card mb-2 lezaj-mini-card"><div class="card-body py-2 px-3 d-flex justify-content-between align-items-center">
+        <div><strong>@l.Naziv</strong><br/><span class="text-muted small">Soba @l.BrojSobe • @l.TipSobe</span></div>
+        <div class="text-end"><span class="text-primary fw-semibold">@l.CijenaPoNoci.ToString("F0")€</span><br/>
+          <a asp-controller="Rezervacija" asp-action="Create" asp-route-lezajId="@l.Id" class="btn btn-success btn-sm mt-1">Rezerviraj</a></div>
+      </div></div>
+    }
+  </div>
+</div>

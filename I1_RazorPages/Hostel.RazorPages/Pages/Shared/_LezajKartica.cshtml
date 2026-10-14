@@ -1,0 +1,19 @@
+@using Hostel.RazorPages.Models
+@model Lezaj
+<div class="card lezaj-kartica h-100">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-start mb-2">
+      <h5 class="card-title mb-0">@Model.Naziv</h5>
+      @if(Model.Dostupan){<span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Dostupan</span>}
+      else{<span class="badge bg-danger"><i class="bi bi-x-circle me-1"></i>Zauzet</span>}
+    </div>
+    <p class="text-muted small mb-1"><i class="bi bi-door-open me-1"></i>Soba @Model.BrojSobe &nbsp;|&nbsp;<i class="bi bi-tag me-1"></i>@Model.TipSobe</p>
+    @if(!string.IsNullOrEmpty(Model.Opis)){<p class="card-text small">@Model.Opis</p>}
+    <p class="card-text"><strong class="text-primary fs-5">@Model.CijenaPoNoci.ToString("F2") €</strong><span class="text-muted small"> / noć</span></p>
+  </div>
+  <div class="card-footer bg-transparent d-flex gap-2">
+    <a asp-page="/Lezajevi/Details" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye me-1"></i>Detalji</a>
+    <a asp-page="/Lezajevi/Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil me-1"></i>Uredi</a>
+    <a asp-page="/Rezervacije/Create" asp-route-lezajId="@Model.Id" class="btn btn-sm btn-success ms-auto"><i class="bi bi-calendar-plus me-1"></i>Rezerviraj</a>
+  </div>
+</div>

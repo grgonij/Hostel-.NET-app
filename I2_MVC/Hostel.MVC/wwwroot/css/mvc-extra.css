@@ -1,0 +1,22 @@
+
+/* MVC specific additions */
+.quick-action-card {
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    color: inherit;
+}
+.quick-action-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(26,107,74,0.12);
+    border-color: var(--hostel-primary);
+    color: inherit;
+}
+.lezaj-mini-card {
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    transition: box-shadow 0.2s;
+}
+.lezaj-mini-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}

@@ -1,0 +1,21 @@
+@page "{id:int}"
+@model Hostel.RazorPages.Pages.Rezervacije.DeleteModel
+@{ ViewData["Title"] = "Obriši rezervaciju"; }
+<div class="page-header"><h2><i class="bi bi-trash me-2 text-danger"></i>Obriši rezervaciju</h2></div>
+<div class="row"><div class="col-md-5"><div class="card border-danger shadow-sm">
+  <div class="card-header bg-danger text-white"><i class="bi bi-exclamation-triangle me-2"></i>Potvrda brisanja</div>
+  <div class="card-body">
+    <p>Jeste li sigurni da želite obrisati ovu rezervaciju?</p>
+    <table class="table table-borderless small">
+      <tr><td class="fw-semibold">Gost:</td><td>@Model.Rezervacija!.ImeGosta</td></tr>
+      <tr><td class="fw-semibold">E-mail:</td><td>@Model.Rezervacija.Email</td></tr>
+      <tr><td class="fw-semibold">Prijava:</td><td>@Model.Rezervacija.DatumPrijave.ToString("dd.MM.yyyy")</td></tr>
+    </table>
+    <form method="post">
+      <div class="d-flex gap-2 mt-3">
+        <button type="submit" class="btn btn-danger" onclick="return potvrdiObrisanje('@Model.Rezervacija.ImeGosta')"><i class="bi bi-trash me-1"></i>Da, obriši</button>
+        <a asp-page="Index" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Odustani</a>
+      </div>
+    </form>
+  </div>
+</div></div></div>

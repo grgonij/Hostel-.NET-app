@@ -1,0 +1,19 @@
+@page
+@model Hostel.RazorPages.Pages.Lezajevi.FiltrirajModel
+@{ ViewData["Title"] = "Pretraži ležajeve"; }
+<div class="page-header"><h2><i class="bi bi-funnel-fill me-2"></i>Pretraži i filtriraj ležajeve</h2></div>
+<div class="card shadow-sm mb-4"><div class="card-body">
+  <form method="get" class="row g-3 align-items-end">
+    <div class="col-md-3"><label class="form-label fw-semibold">Tip sobe</label>
+      <select name="tip" asp-items="Html.GetEnumSelectList<Hostel.RazorPages.Models.TipSobe>()" class="form-select"><option value="">-- Sve --</option></select></div>
+    <div class="col-md-2"><label class="form-label fw-semibold">Cijena od (€)</label><input type="number" name="cijenaOd" value="@Model.CijenaOd" class="form-control" min="0" step="0.5" /></div>
+    <div class="col-md-2"><label class="form-label fw-semibold">Cijena do (€)</label><input type="number" name="cijenaDo" value="@Model.CijenaDo" class="form-control" min="0" step="0.5" /></div>
+    <div class="col-md-2"><div class="form-check mt-4"><input type="checkbox" name="samoDostupni" value="true" class="form-check-input" @(Model.SamoDostupni ? "checked" : "") id="dostupni" /><label class="form-check-label fw-semibold" for="dostupni">Samo dostupni</label></div></div>
+    <div class="col-md-3"><div class="d-flex gap-2"><button type="submit" class="btn btn-hostel"><i class="bi bi-search me-1"></i>Pretraži</button><a asp-page="Filtriraj" class="btn btn-outline-secondary"><i class="bi bi-x-circle me-1"></i>Resetiraj</a></div></div>
+  </form>
+</div></div>
+<p class="text-muted small mb-3">Pronađeno: <strong>@Model.Rezultati.Count</strong> ležajeva</p>
+<div class="row g-3">
+  @foreach (var lezaj in Model.Rezultati) { <div class="col-md-4"><partial name="_LezajKartica" model="lezaj" /></div> }
+  @if (!Model.Rezultati.Any()) { <div class="col-12"><div class="alert alert-hostel"><i class="bi bi-search me-2"></i>Nema ležajeva koji odgovaraju zadanim kriterijima.</div></div> }
+</div>

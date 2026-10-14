@@ -1,0 +1,17 @@
+@model Hostel.MVC.Models.Rezervacija
+@{ ViewData["Title"] = "Obriši rezervaciju"; }
+<div class="page-header"><h2><i class="bi bi-trash me-2 text-danger"></i>Obriši rezervaciju</h2></div>
+<div class="row"><div class="col-md-5"><div class="card border-danger shadow-sm">
+  <div class="card-header bg-danger text-white"><i class="bi bi-exclamation-triangle me-2"></i>Potvrda brisanja</div>
+  <div class="card-body">
+    <p>Jeste li sigurni da želite obrisati ovu rezervaciju?</p>
+    <table class="table table-borderless small">
+      <tr><td class="fw-semibold">Gost:</td><td>@Model.ImeGosta</td></tr>
+      <tr><td class="fw-semibold">Ležaj:</td><td>@Model.Lezaj?.Naziv</td></tr>
+      <tr><td class="fw-semibold">Prijava:</td><td>@Model.DatumPrijave.ToString("dd.MM.yyyy")</td></tr>
+    </table>
+    <form asp-action="Delete" method="post"><input type="hidden" asp-for="Id" />
+      <div class="d-flex gap-2"><button type="submit" class="btn btn-danger"><i class="bi bi-trash me-1"></i>Da, obriši</button><a asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Odustani</a></div>
+    </form>
+  </div>
+</div></div></div>
